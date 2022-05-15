@@ -1,0 +1,13 @@
+.div-display{
+    display: inline-block;
+}
+
+.div-margin{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.profile-image{
+    width: 150px;
+    height: 150px;
+}

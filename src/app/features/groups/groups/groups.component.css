@@ -1,0 +1,19 @@
+.nav-margin{
+    margin-top: 15px;
+}
+.tabs-content-margin{
+    margin-top: 20px;
+}
+.group-card{
+    width: 17rem;
+    display: inline-block;
+    margin: 10px;
+}
+.group-card-title{
+    font-size: 16px;
+    font-weight: bold;
+    height: 50px;
+}
+.margin-top-15{
+    margin-top: 15px;
+}

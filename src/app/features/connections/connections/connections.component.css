@@ -1,0 +1,21 @@
+.profile-image{
+    width: 150px;
+    height: 150px;
+}
+.display-div{
+    display: inline-block !important;
+    margin: 30px;
+    cursor: pointer;
+}
+.connection-name{
+    text-align: center;
+    font-weight: 600;
+    color: #12a7ff;
+}
+.back-btn-div{
+    height: 40px;
+    margin: 20px;
+}
+.btn-css{
+    float: right;
+}

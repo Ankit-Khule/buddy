@@ -1,0 +1,16 @@
+
+<div class="container-fluid" style="height: 100%;">
+    <div class="row" style="height: 10%;">
+        <div class="col col-sm-12 col-md-12 col-lg-12" *ngIf="student.username != null">
+            <app-header *ngIf="student.username != null"></app-header>
+        </div>
+    </div>
+    <div class="row" style="height: 90%;">
+        <div class="col col-sm-2 col-md-2 col-lg-2" *ngIf="student.username != null">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col col-sm-10 col-md-10 col-lg-10">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

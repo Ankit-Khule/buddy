@@ -1,0 +1,14 @@
+<div style="position: relative">
+<div class="row">
+    <div class="col col-sm-12 col-md-12 col-lg-12">
+        <div class="header-css">
+            <h3 class="logo-css">DBS BUDDY APPLICATION</h3>
+            <a routerLink="/myProfile" routerLinkActive="active">
+                <img src="./../../../assets/images/profile-picture.jpg" alt="Upload Your Picture" class="profile-image">
+                <strong>{{student.username || 'First Login'}}</strong>
+            </a> | 
+            <span class="cursor-pointer" routerLink="/login" (click)="logout()"><strong>Logout</strong></span></div>
+    </div>
+</div>
+<ngx-ui-loader [loaderId]="'loader-get-logout'"></ngx-ui-loader>
+</div>

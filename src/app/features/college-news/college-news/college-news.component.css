@@ -1,0 +1,19 @@
+.card-margin{
+    margin-top: 12px;
+}
+
+.display-css{
+    display: inline-block;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.input-width{
+    width: 50% !important;
+}
+
+.form-div-margin{
+    margin-bottom: 20px;
+}

@@ -1,0 +1,86 @@
+<div style="position: relative">
+        <div class="form-group">
+            <h3 class="text-blue">BUDDY-PROGRAMME FEEDBACK FORM</h3>
+        </div>
+        <div class="form-group margin-bottm-25">
+        <label for="formGroupExampleInput" class="feedback-label">
+           1. How did you find out about the buddy-programme?
+        </label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="answer1" value="answer1" [(ngModel)]="feedback.answer1" name="exampleRadios2">
+            <label class="form-check-label" for="answer1">
+            With the help of student council
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="answer2" value="answer2" [(ngModel)]="feedback.answer1" name="exampleRadios2">
+            <label class="form-check-label" for="answer2">
+            With the help of friends
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="answer3" value="answer3" [(ngModel)]="feedback.answer1" name="exampleRadios2">
+            <label class="form-check-label" for="answer3">
+            Through the college's home page
+            </label>
+        </div>
+        <div class="form-check">
+            <label for="answer4" class="feedback-label">
+            Other
+            </label>
+            <input class="form-control" type="text" id="answer4" [(ngModel)]="feedback.answer1">
+        </div>
+        </div>
+        <div class="form-group margin-bottm-25">
+            <label for="exampleFormControlTextarea1" class="feedback-label">
+               2. What activities did you attend together with your buddy? How often did you meet?
+            </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="feedback.answer2" name="answer2"></textarea>
+        </div>
+        <div class="form-group margin-bottm-25">
+            <label for="exampleFormControlTextarea1" class="feedback-label">
+               3. Did the buddy-programme help you settle in Ireland and Dublin Business School?
+            </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="feedback.answer3" name="answer3"></textarea>
+        </div>
+        <div class="form-group margin-bottm-25">
+            <label for="exampleFormControlTextarea1" class="feedback-label">
+              4. On what issues and questions did you have to seek the help of your buddy?
+            </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="feedback.answer4" name="answer4"></textarea>
+        </div>
+        <div class="form-group margin-bottm-25">
+            <label for="exampleFormControlTextarea1" class="feedback-label">
+               5. Is there anything you would like to criticize? What suggestions do you have?
+            </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="feedback.answer5" name="answer5"></textarea>
+        </div>
+        <div class="form-group margin-bottm-25">
+            <label for="exampleFormControlTextarea1" class="feedback-label">
+              6. What did you like?
+            </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="feedback.answer6" name="answer6"></textarea>
+        </div>
+        <div class="form-group margin-bottm-25">
+            <label for="exampleFormControlTextarea1" class="feedback-label">
+              7. I would like to continue to participate in the buddy-programme and be available as an experienced buddy
+                in the forthcoming semester.
+            </label>
+            <div class="form-check">
+                <input type="radio" value="Yes" name="answer7" [ngModel]="feedback.answer7">
+                <label class="form-check-label" for="answer7">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input type="radio" value="No" name="answer7" [ngModel]="feedback.answer7">
+                <label class="form-check-label" for="answer7">
+                    No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="saveFeedback(feedback)">Submit</button>   
+        </div>
+    <ngx-ui-loader [loaderId]="'loader-feedback-form'"></ngx-ui-loader>
+  </div>

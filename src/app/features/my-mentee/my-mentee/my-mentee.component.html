@@ -1,0 +1,5 @@
+<div style="position: relative;height: 100%;">
+    <app-profile-info [profileData]="mentee" (displayMessageBox)="displayMessageBox($event)" *ngIf="!isMessageBoxOpened"></app-profile-info>
+    <app-chat [studentInfo]="user" [userInfo]="mentee" (displayBuddyInfo)="displayBuddyInfo($event)" *ngIf="isMessageBoxOpened"></app-chat>
+    <ngx-ui-loader [loaderId]="'loader-get-mentee'"></ngx-ui-loader>
+</div>

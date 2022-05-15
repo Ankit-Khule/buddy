@@ -1,0 +1,36 @@
+<div style="position: relative">
+    <div class="row">
+        <p>Post latest college news here !!</p>
+        <div class="col col-sm-12 col-md-6 col-lg-6">
+            <div class="form-group form-div-margin">
+                <label for="heading">News Heading</label>
+                <input type="text" class="form-control input-width" id="heading"
+                    required [(ngModel)]="news.heading" name="heading">
+            </div>
+        
+            <div class="form-group form-div-margin">
+                <label for="content">News Content</label>
+                <textarea rows = "5" class="form-control" [(ngModel)]="news.content" 
+                    name="content" id="content" required>
+                      Enter details here...
+                  </textarea>
+            </div>
+
+            <div class="form-group form-div-margin">
+                <label for="author">Author</label>
+                <input type="text" class="form-control input-width" id="author"
+                    required [(ngModel)]="news.author" name="author">
+            </div>
+        
+            <div class="form-group form-div-margin">
+                <label for="dateofnews">News Publish Date</label>
+                <input type="date" class="form-control input-width" id="dateofnews"
+                    required [(ngModel)]="news.dateofnews" name="dateofnews">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" (click)="postNews(news)">Post News</button>
+        </div>
+    </div>
+    <ngx-ui-loader [loaderId]="'loader-post-news'"></ngx-ui-loader>
+    </div>

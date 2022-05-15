@@ -1,0 +1,93 @@
+<div style="position: relative" style="height: 10%;">
+<div class="row">
+    <div>
+        <!-- <label class="image-upload-container btn btn-bwm">
+            <span>Upload Profile Picture</span>
+            <input #profileImage type="file" accept="image/*" (change)="processProfileImage(profileImage)">
+            <img *ngIf="selectedFile" src="{{selectedFile.src}}" alt="Image not uploaded" class="profile-image">
+        </label> -->
+    </div>
+    <div class="col col-sm-12 col-md-6 col-lg-6">
+        <div class="form-group form-div-margin">
+            <label for="name">Name</label>
+            <input type="text" class="form-control input-width" id="name"
+                required [(ngModel)]="student.name" name="name">
+        </div>
+    
+        <div class="form-group form-div-margin">
+            <label for="studentid">Student Id</label>
+            <input type="number" class="form-control input-width" id="studentid"
+                required [(ngModel)]="student.studentid" name="studentid">
+        </div>
+    
+        <div class="form-group form-div-margin">
+            <label for="bio">Bio (Share something interesting about yourself)</label>
+            <input type="textarea" class="form-control input-width" id="bio"
+                [(ngModel)]="student.bio" name="bio">
+        </div>
+    
+        <div class="form-group form-div-margin">
+            <label for="module">Course/Module</label>
+            <select class="form-control input-width" id="module"
+                required [(ngModel)]="student.module" name="mod">
+                <option *ngFor="let mod of modules" [value]="mod">{{mod}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col col-sm-12 col-md-6 col-lg-6">
+        <div class="form-group form-div-margin">
+            <label for="startdate">Course/Module Start Date</label>
+            <input type="date" class="form-control input-width" id="startdate"
+                required [(ngModel)]="student.startdate" name="startdate">
+        </div>
+    
+        <div class="form-group form-div-margin">
+            <label for="naenddateme">Course/Module End Date</label>
+            <input type="date" class="form-control input-width" id="enddate"
+                required [(ngModel)]="student.enddate" name="enddate">
+        </div>
+    
+        <div class="form-group form-div-margin">
+            <label for="country">Country of Origin</label>
+            <select class="form-control input-width" id="module"
+                required [(ngModel)]="student.country" name="country">
+                <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+            </select>
+        </div>
+        <div class="form-group form-div-margin">
+            <label for="hobby">Hobbies</label>
+            <input type="textarea" class="form-control input-width" id="hobby"
+                [(ngModel)]="student.hobby" name="hobby">
+        </div>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" *ngIf="studentCopy.startdate == null && !informationSaved" (click)="saveProfile(student)">Save Profile</button>
+        <button type="button" class="btn btn-primary" *ngIf="studentCopy.startdate != null && informationSaved" (click)="updateProfile(student,'')">Update Profile</button>
+        <p *ngIf="profileInfoSaved" class="text-success success-message-css">Your Profile is saved successfully!</p>
+    </div>
+</div>
+<div *ngIf="(student.name !== 'Admin') && (todaysDate > student.enddate)">
+   <div class="margin-top form-div-margin">
+    Do you want to help a fresher in your college by being his or her buddy? Just like your buddy
+    helped you once, when you were a newcomer. If yes, click on the button below, you will be added in
+    our database. If a newcomer matches your profile, you would be assigned as a buddy to somene and 
+    the person can connect with you in the future. If in future, you get assigned to someone as a buddy,
+    that person's name will appear below, and you can go to his profile by clicking the person's name.
+    </div>
+    <div class="form-group form-div-margin">
+        <label for="name">Do you want to be a Buddy in future ?</label>
+        <div class="form-check form-switch" *ngIf="!student.isbuddy || student.isbuddy == null">
+            <label class="form-check-label" for="flexSwitchCheckChecked">No</label>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" (click)="updateProfile(student,'yesBuddy')">
+        </div>
+        <div class="form-check form-switch" *ngIf="student.isbuddy">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Yes</label>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked (click)="updateProfile(student,'noBuddy')">
+        </div>
+    </div>
+    <div class="form-group form-div-margin">
+        <label for="name"><b>Student assigned :</b> <span class="text-blue" (click)="openMentee()"><u>{{student.studentassignedname || studentNotAssgined}}</u></span></label>
+    </div>
+</div>
+<ngx-ui-loader [loaderId]="'loader-get-profile'"></ngx-ui-loader>
+</div>

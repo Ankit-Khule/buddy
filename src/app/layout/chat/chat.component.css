@@ -1,0 +1,56 @@
+.card-height{
+    height: 600px;
+}
+
+.card-header-css{
+    padding: 5px;
+    background-color: white;
+    font-weight: 600;
+    font-size: 20px;
+    color: #084298;
+
+}
+
+.float-right{
+    float: right;
+    cursor: pointer;
+}
+
+.profile-image{
+    width: 60px;
+    height: 60px;
+}
+
+.message-container{
+    margin-bottom: 0px;
+}
+
+.text-message-right{
+    float: right;
+    background: #aed2ff;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 2px;
+    clear: both;
+    margin-bottom: 5px;
+}
+
+.text-message-left{
+    background: #f1f1eb;
+    float: left;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 2px;
+    clear: both;
+    margin-bottom: 5px;
+}
+
+.text-grey{
+    color: grey;
+}
+
+.card-body-scroll{
+    height: 350px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}

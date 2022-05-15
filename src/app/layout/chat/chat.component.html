@@ -1,0 +1,24 @@
+<div class="card card-height">
+    <div class="card-header card-header-css">
+        <img src="./../../../assets/images/image0.png" alt="Upload Your Picture" class="profile-image"> {{userInfo.name}} 
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x float-right" viewBox="0 0 16 16" (click)="openBuddyInfo()">
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+    </div>
+    <div class="card-body card-body-scroll">
+      <div class="card-text" *ngFor="let message of duplicateMessagesArray">
+          <div id="messageBox" [ngClass]="{'text-message-right': message.sender_name == studentInfo.name, 'text-message-left': message.sender_name == userInfo.name}">
+            <p><span><strong>{{message.sender_name}}</strong></span> <span class="text-grey"> on {{message.message_publish_time}}</span></p>
+            <p class="message-container">{{message.messages}}</p>
+          </div>
+      </div>
+      
+    </div>
+    <div class="card-footer text-muted">
+        <div class="mb-3">
+            <label for="typeYourMessage" class="form-label">Type your message..</label>
+            <textarea class="form-control" id="typeYourMessage" rows="3" [(ngModel)]="message" (keyup.enter)="sendMessage(message)"></textarea>
+        </div>
+        <a class="btn btn-primary" (click)="sendMessage(message)">Message</a>
+    </div>
+</div>

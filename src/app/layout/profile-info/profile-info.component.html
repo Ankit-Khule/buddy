@@ -1,0 +1,25 @@
+<div class="row" style="height: 100%;">
+    <div class="col col-sm-12 col-md-12 col-lg-12 div-margin">
+        <!-- <div><img src="{{profileData.image}}" alt="Upload Your Picture" class="profile-image"></div> -->
+        <div class="col col-sm-6 col-md-4 col-lg-4 div-display">
+            <p><b>Name</b></p>
+            <p><b>Bio</b></p>
+            <p><b>Course/Module</b></p>
+            <p><b>Course/Module Start Date</b></p>
+            <p><b>Course/Module End Date</b></p>
+            <p><b>Country of Origin</b></p>
+            <p><b>Hobbies</b></p>
+        </div>
+        <div class="col col-sm-6 col-md-8 col-lg-8 div-display">
+            <p>{{profileData.name}}</p>
+            <p>{{profileData.bio}}</p>
+            <p>{{profileData.module}}</p>
+            <p>{{profileData.startdate}}</p>
+            <p>{{profileData.enddate}}</p>
+            <p>{{profileData.country}}</p>
+            <p>{{profileData.hobby}}</p>
+        </div>
+        <div class="col"><button type="button" class="btn btn-primary" (click)="openMessageBox()">Message</button></div>
+    </div>
+</div>
+

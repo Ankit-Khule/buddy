@@ -1,0 +1,20 @@
+<div class="row" style="position: relative;height: 100%;">
+    <div class="col" *ngIf="!isDisplayConnection" style="height: 100%;">
+    <div class="col col-sm-12 col-md-12 col-lg-12">Students also studying in {{user?.module}}.</div>
+    <div class="col col-sm-12 col-md-12 col-lg-12 div-margin" style="height: 100%;">
+        <div class="display-div" *ngFor="let connection of connections" (click)="openConnectionInfo(connection)">
+            <div><img src="{{connection.image}}" alt="Upload Your Picture" class="profile-image"></div>
+            <div class="connection-name">{{connection.name}}</div>
+        </div>
+    </div>
+    </div>
+    <div *ngIf="isDisplayConnection">
+        <div class="back-btn-div"> See your connection's Profile :
+            <a type="button" class="btn btn-primary btn-css" (click)="openConnections()">Go Back to Connections</a>
+        </div>
+        <app-profile-info [profileData]="selectedConnection" (displayMessageBox)="displayMessageBox($event)" *ngIf="!isMessageBoxOpened"></app-profile-info>
+        <app-chat [studentInfo]="user" [userInfo]="selectedConnection" (displayBuddyInfo)="displayBuddyInfo($event)" *ngIf="isMessageBoxOpened"></app-chat>
+    </div>
+    <ngx-ui-loader [loaderId]="'loader-get-connections'"></ngx-ui-loader>
+</div>
+

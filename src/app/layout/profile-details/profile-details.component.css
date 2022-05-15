@@ -1,0 +1,35 @@
+.input-width{
+    width: 50% !important;
+}
+
+.form-div-margin{
+    margin-bottom: 20px;
+}
+
+.margin-top{
+    margin-top: 40px;
+}
+
+.text-success{
+    color: rgb(10, 82, 10);
+}
+
+.success-message-css{
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.profile-image{
+    width: 100px;
+    height: 100px;
+}
+
+.margin-left-20{
+    margin-left: 20px !important;
+}
+
+.text-blue{
+    color: blue;
+    cursor: pointer;
+}

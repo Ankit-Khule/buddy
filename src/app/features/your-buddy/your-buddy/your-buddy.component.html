@@ -1,0 +1,18 @@
+<div style="position: relative;height: 100%;">
+    <div class="row">
+    <div class="col" *ngIf="!buddyAssigned">
+        <p>A buddy is not assigned to you. Go to My Profile page to fill your details, and then come back to this page
+            to check your assigned buddy.
+        </p>
+        <div class="col col-sm-12 col-md-12 col-lg-12">
+            <a class="blue-text" (click)="assignBuddy()"><u>Click here</u></a> to check who is assigned you as your buddy.
+        </div>
+    </div>
+    <div class="col" *ngIf="buddyAssigned">
+      <p>Yeayyy ! A buddy is assigned to you. You can connect with you buddy to know any queries.</p>
+    </div>
+</div>
+<app-profile-info [profileData]="buddy" (displayMessageBox)="displayMessageBox($event)" *ngIf="!isMessageBoxOpened"></app-profile-info>
+<app-chat [studentInfo]="user" [userInfo]="buddy" (displayBuddyInfo)="displayBuddyInfo($event)" *ngIf="isMessageBoxOpened"></app-chat>
+<ngx-ui-loader [loaderId]="'loader-get-buddies'"></ngx-ui-loader>
+</div>
